@@ -13,4 +13,6 @@ export class HomeComponent {
 
   dia: string=''
 
+  recibirNotificaciones:boolean = true;
+
 }

@@ -53,4 +53,49 @@
       >
     </div>
   </div>
+
+  <div class="bg-yellow-100 p-4 mt-8">
+    <div class="text-xl text-slate-600 mb-4">
+      <div>
+        <h3 class="text-orange-800 text-xl mt-4 mb-2">The beatles</h3>
+        <ul *ngFor="let name of names" class="mr-2">
+          <li
+            [ngClass]="{
+              selected: name == 'Jhon',
+              unSelected: name != 'Jhon '
+            }"
+            class=""
+          ></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h1>Tarea en clase:</h1>
+  <div class="flex justify-center">
+    <div class="mt-10 rounded w-1/2">
+      <div class="bg-white flex p-2">
+        <input [(ngModel)]="recibirNotificaciones" type="checkbox" />
+        <p>Is active</p>
+      </div>
+      <div *ngIf="recibirNotificaciones; else desactivado">
+        <div class="bg-slate-400">
+          <img
+            class="w-2/3 mx-auto"
+            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fopenclipart.org%2Fimage%2F2400px%2Fsvg_to_png%2F272339%2Fangular.png&f=1&nofb=1&ipt=57b5ddae64a8512633870c7a8720e4d5bd0e4e6cc86903bb01fc8c72926147cf&ipo=images"
+            alt=""
+          />
+        </div>
+        <div class="p-3 bg-white">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+          nemo tempore porro tempora perspiciatis non culpa quos totam,
+          molestiae obcaecati nostrum, quia nam quibusdam error reiciendis hic
+          laudantium et sequi.
+        </div>
+      </div>
+      <ng-template #desactivado>
+        <p>Activa el checkbox para mostrar el contenido</p>
+      </ng-template>
+    </div>
+  </div>
 </div>
