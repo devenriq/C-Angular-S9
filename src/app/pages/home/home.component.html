@@ -1,3 +1,24 @@
-<div class="bg-slate-200 w-1/2">
-  <h1>Directivas estructurales</h1>
+<div class="bg-slate-200 w-1/2 mx-auto mt-6 p-6">
+  <h1 class="text-2xl text-slate-800">Directivas estructurales</h1>
+
+  <div class="bg-yellow-100 p-4 mt-8">
+    <label class="mt-4" for="">Ingresa un nombre</label>
+    <input
+      class="border px-2 py-1 rounded"
+      type="text"
+      name="nombre"
+      id=""
+      [(ngModel)]="nombre"
+    />
+    <p *ngIf="nombre">
+      Estás ingresando el nombre de <span> {{ nombre }} </span>
+    </p>
+  </div>
+
+  <div class="bg-yellow-100 p-4 mt-8">
+    <div *ngIf="status; else bloque">Esto aparece si es verdadero</div>
+    <ng-template class="block bg-orange-500" #bloque>
+      Esto se mostrará si no es verdadero
+    </ng-template>
+  </div>
 </div>
