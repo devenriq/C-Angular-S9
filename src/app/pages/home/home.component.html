@@ -21,4 +21,36 @@
       Esto se mostrará si no es verdadero
     </ng-template>
   </div>
+
+  <div class="bg-yellow-100 p-4 mt-8">
+    <h2 class="text-xl text-slate-600 mb-4">Directivas *ngFor</h2>
+    <ul *ngFor="let name of names">
+      <li>{{ name }}</li>
+    </ul>
+  </div>
+
+  <div class="bg-yellow-100 p-4 mt-8">
+    <h2 class="text-xl text-slate-600 mb-4">Directivas [ngSwitch]</h2>
+
+    <input class="reounded p1-border" type="text" #newDay />
+    <button
+      (click)="dia = newDay.value"
+      class="rounded bg-blue-500 px-3 py-1 text-white mt-2"
+    >
+      Qué día es?
+    </button>
+
+    <div [ngSwitch]="dia">
+      <span *ngSwitchCase="1">Lunes</span>
+      <span *ngSwitchCase="2">Martes</span>
+      <span *ngSwitchCase="3">Miércoles</span>
+      <span *ngSwitchCase="4">Jueves</span>
+      <span *ngSwitchCase="5">Viernes</span>
+      <span *ngSwitchCase="6">Sábado</span>
+      <span *ngSwitchCase="7">Domingo</span>
+      <span class="text-red-600" *ngSwitchDefault=""
+        >Ingrese un valor de un día válido</span
+      >
+    </div>
+  </div>
 </div>

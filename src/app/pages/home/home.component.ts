@@ -8,4 +8,9 @@ export class HomeComponent {
   status = true
 
   nombre:string = ''
+
+  names: string[]=['enrique', 'gerardo', 'ausiano']
+
+  dia: string=''
+
 }
